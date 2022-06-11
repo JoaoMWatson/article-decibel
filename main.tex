@@ -1,0 +1,101 @@
+\documentclass[
+	article,			
+	12pt,				
+	oneside,			
+	a4paper,						
+	brazil,				
+	sumario=tradicional
+	]{abntex2}
+
+\input{./config/packages}
+
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+
+\renewcommand{\backref}{}
+
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+
+\titulo{Bel e Decibel}
+\tituloestrangeiro{}
+
+\autor{
+    \Large Centro Universitário Senac \\
+    Bacharelado em Ciência da Computação 
+\\[0.75cm]
+\normalsize João Pedro Martins Watson\thanks{Estudante em Bacharelado de Ciência da Computação}
+}
+
+\local{São Paulo}
+\data{São Paulo \\ 7 de Junho 2022}
+
+\definecolor{blue}{RGB}{41,5,195}
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\hypersetup{
+        %pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+        pdfsubject={Bel e Decibel},
+        pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={Bel}{Decibel}{Som}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+        linkcolor=blue,          	% color of internal links
+        citecolor=blue,        		% color of links to bibliography
+        filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+\makeindex
+
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\checkandfixthelayout
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.5cm}
+
+\setlength{\parskip}{0.2cm}
+
+\SingleSpacing
+
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing 
+\maketitle
+
+\begin{resumoumacoluna}
+    
+	Este artigo trata-se de uma pesquisa e aprofundamento sobre os conceitos e definições de Bel(B) e Decibel(dB).
+	Contando sua origem, fundamentos, utilidade e destrinchando os cálculos e a matemática que os definem. 
+	A principal função deste trabalho será entender o por que, e, para que, esses conceitos são importantes 
+	e por que estudá-los.
+    
+    \vspace{\onelineskip}
+    
+    \noindent
+    \textbf{Palavras-chave}: Bem. Decibel. Som.
+\end{resumoumacoluna}
+
+\textual
+
+\newpage
+
+\input{pages/introducao}
+
+\input{pages/discussao}
+
+\newpage
+\input{pages/bibliografia}
+
+\end{document}
